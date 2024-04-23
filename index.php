@@ -3,6 +3,8 @@
 <!-- formas de iniciar la interpretacion de codigo php -->
 <!-- <?php ?> o <? ?> -->
 
+<?php
+/*
 solo imprime una cadena
 <?php
 print "hola mundo";
@@ -20,16 +22,24 @@ print_r("hola mundo");
 
 - Comentarios en php
 de una linea //
-de varias lineas /**/
-
+de varias lineas - igual que en css
+*/
+?>
 <!-- -Incrustar php dentro de un documento de html -->
 
 <?php
 
 //recibir informacion del formulario
-$nombre=$_POST['txtNombre'];
+//confirmar que el campo no venga vacio
+if($_POST){
 
-echo "Hola ".$nombre;
+$nombre=$_POST['txtNombre'];
+$apellido=$_POST['txtApellido'];
+
+//concatenacion
+echo "Hola ".$nombre." ".$apellido;
+
+}
 
 ?>
 <!DOCTYPE html>
@@ -45,44 +55,53 @@ echo "Hola ".$nombre;
         Nombre:
         <input type="text" name="txtNombre" id="">
         <br>
+        Apellido
+        <input type="text" name="txtApellido" id="">
+        <br>
         <input type="submit" value="Enviar nombre">
     </form>
 </body>
 </html>
 
+<?php
 //variables y constantes//
  
-se usa $
-convenciones para nombrar
-comenzar con una letra o _
-nunca con un numero
-no pueden tener espacios
-sensible a mayusculas, name y Name son variables distintas
-se puede reasignar un valor
-<?php
-$nombre; 
-?>
+// se usa $
+// convenciones para nombrar
+// comenzar con una letra o _
+// nunca con un numero
+// no pueden tener espacios
+// sensible a mayusculas, name y Name son variables distintas
+// se puede reasignar un valor
 
+?>
+<?
 //Tipos de datos
-String = "letras"
-entero = 7;
-float = 11,4;
-booleano = true;
 
-<?php
-$nombre = "miguel";
-$edad = "7";
-$promedio = "20";
-echo $nombre, " ", $edad, " ", $promedio;
+// String = "letras" se pueden escribir entre comillas simples o dobles
+// concatenacion "Hola ".$mundo; se usa un punto para unir y comillas vacias para los espacios
+
+// entero = 7;
+// float = 11,4;
+// booleano = true;
+
+// $nombre = "miguel";
+// $edad = "8";
+// $promedio = "20";
+// concatenacion
+// echo $nombre, " ", $edad, " ", $promedio;
 ?>
 
+<?
 //Constantes
+// (se puede usar de manera global)
+// const escuela = "Simon Bolivar";
 
-(se puede usar de manera global)
-const escuela = "Simon Bolivar";
+// (se usa de manera local)
+// define("direccion","calle 13 de enero");
 
-(se usa de manera local)
-define("direccion","calle 13 de enero");
+// para imprimir esta constante usamos
+// echo direccion -> la especificacion de la constante
 
 //Conversiones//
 
