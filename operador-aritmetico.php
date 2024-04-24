@@ -1,51 +1,51 @@
 <?php
-//Operadores aritmeticos
+// //Operadores aritmeticos
 
-//operador identidad + una variable puede tener valor positivo o negativo, incluso la variable puede ser negativa o positiva
-//operador de negacion - al igual que en matematicas, se cumplen la ley de los signos
-$numero = -56;
-echo -$numero;
+// //operador identidad + una variable puede tener valor positivo o negativo, incluso la variable puede ser negativa o positiva
+// //operador de negacion - al igual que en matematicas, se cumplen la ley de los signos
+// $numero = -56;
+// echo -$numero;
 
-//operador de adicion +
+// //operador de adicion +
 
-$numero = 10;
-$numero2 = 120;
+// $numero = 10;
+// $numero2 = 120;
 
-echo $numero + $numero2;
+// echo $numero + $numero2;
 
-//Operador de sustraccion
-$numero = 10;
-$numero2 = 120;
+// //Operador de sustraccion
+// $numero = 10;
+// $numero2 = 120;
 
-echo $numero - $numero2;
+// echo $numero - $numero2;
 
-//Operador de multiplicacion
+// //Operador de multiplicacion
 
-$numero = 10;
-$numero2 = 120;
+// $numero = 10;
+// $numero2 = 120;
 
-echo $numero * $numero2;
+// echo $numero * $numero2;
 
-//Operador de division
+// //Operador de division
 
-$numero = 10;
-$numero2 = 120;
+// $numero = 10;
+// $numero2 = 120;
 
-echo $numero / $numero2;
+// echo $numero / $numero2;
 
-//Operador de modulo, es el residuo de una division
+// //Operador de modulo, es el residuo de una division
 
-$numero = 10;
-$numero2 = 120;
+// $numero = 10;
+// $numero2 = 120;
 
-echo $numero % $numero2;
+// echo $numero % $numero2;
 
-//Operador de potencia
+// //Operador de potencia
 
-$numero = 10;
-$numero2 = 120;
+// $numero = 10;
+// $numero2 = 120;
 
-echo $numero ** $numero2;
+// echo $numero ** $numero2;
 ?>
 
 
