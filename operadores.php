@@ -1,19 +1,19 @@
 <?php
 //Operadores
 
-Unarios, Binarios, ternarios
+// Unarios, Binarios, ternarios
 
-Unarios 
-operando Operador
-             $total   ++
+// Unarios 
+// operando Operador
+//              $total   ++
 
-Binarios 
-operando operador operando
-            $total     +        $total
+// Binarios 
+// operando operador operando
+//             $total     +        $total
 
-Ternario 
-operando operador operando operador operando
-        $condicion   ?       'true'     :       'false';
+// Ternario 
+// operando operador operando operador operando
+//         $condicion   ?       'true'     :       'false';
 
 //Operadores de comparacion
 
@@ -167,11 +167,11 @@ $aprobo = ($promedio) ?? 5;
 
 //Predecedencia de Operadores
 //Jerarquia de operaciones
-1-()
-2-*
-3-/
-4-+
-ver jerarquia de operadores en php
+// ()
+// *
+// /
+// -+
+// ver jerarquia de operadores en php
 
 $edad = 20;
 $tieneCedula = "no";
