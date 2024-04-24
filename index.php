@@ -64,7 +64,7 @@ echo "Hola ".$nombre." ".$apellido;
 </html>
 
 <?php
-//variables y constantes//
+///////////variables y constantes/////////
  
 // se usa $
 // convenciones para nombrar
@@ -75,11 +75,154 @@ echo "Hola ".$nombre." ".$apellido;
 // se puede reasignar un valor
 
 ?>
-<?
-//Tipos de datos
+<?php
+//////////Tipos de datos///////////
 
 // String = "letras" se pueden escribir entre comillas simples o dobles
 // concatenacion "Hola ".$mundo; se usa un punto para unir y comillas vacias para los espacios
+
+//Formas de trabajar un String
+
+// 1era - comillas simples
+
+// 2da - comillas dobles
+
+// 3era - heredoc
+
+// 4ta - nowdoc
+
+//comillas dobles y comillas sencillas
+
+// $saludo = "hola";
+
+// echo "$saludo Miguel Bienvenido";
+
+// con comillas simples 
+// echo '$saludo Miguel Bienvenido';
+
+// con comillas simples no se reconoce la variable no se puede hacer la interpolacion, al tener solo una comilla se quita el tiempo que se toma el interprete de definir el string
+
+// para hacer enfasis de una frase no se puede simplemente agregar comillas dobles, reconoce las dos primeras comillas dobles y el segundo par de comillas dobles, fuera de eso, no reconoce las otras palabras como parte del string
+
+// echo ""eres una mala persona" dijo la otra persona";
+
+// para hacer enfasis de una frase dentro de una cadena se usa \, la barra de escape
+
+echo "\"eres una mala persona\" dijo la otra persona"."<br>";
+
+// se pueden usar comillas dobles dentro de comillas simples sin problema
+
+echo '"eres una buena persona"'.'<br>';
+
+// para usar comillas simples dentro de comillas simples se debe usar la barra de escape \
+
+echo 'I\'dont'.'<br>';
+
+// usar comillas simples dentro de comillas dobles las comillas simples se reconocen como parte de la cadena
+
+echo "'Eres una gran persona'"."<br>";
+
+//usar dentro de las comillas dobles el simbolo $
+
+echo "\20020000$"."<br>";
+
+//dentro de comillas simples, no hay problema el uso de $ porque no reconoce el simbolo como variable
+
+echo '30$'.'<br>';
+
+//heredoc y nowdoc - permite crear strings con muchos caracteres
+
+//Heredoc
+
+// <<<identificador+enter
+
+//permite que se incluyan variables
+
+//se pueden incluir comillas
+echo <<<frase
+No importa cual bando inicia una guerra, cuando esta comienza, ambos bandos son malos.<br>
+frase;
+
+//Nowdoc
+
+// <<<'identificador'+enter
+
+//no incluye variables
+
+echo <<<'frase'
+Ella era como el sol, todo giraba alrededor de ella, incluso yo, todo resplandecia, todo brillaba por ella, y yo era feliz, por ella.<br>
+frase;
+
+//ambas se pueden guardar en variables
+//$frase = <<<id+enter+string+id;
+
+// Funciones para los strings//
+
+//Extraer una parte de un string
+//desde el caracter 5 en adelante
+$apellido = substr("José Navas Gutierrez", 5);
+
+echo $apellido."<br>";
+
+//si solo deseo cierto numero de caracteres
+//desde el caracter 5, 11 carateres mas
+$apellidos = substr("José Navas Gutierrez", 5, 11);
+
+echo $apellidos."<br>";
+
+//se pueden usar numeros negativos en la longitud
+//recorre el string hacia atras
+$apellido2 = substr("Gutierrezzz", 0, -8);
+
+echo $apellido2."<br>";
+
+//buscar una palabra dentro de un string
+
+//strpos(donde se va a buscar, cual palabra se va a buscar)
+
+//lo que devuelve strpos es la posicion de la palabra en el string
+
+$bienvenida = "bienvenido al mundo de la programacion";
+
+$palabra = "programacion";
+
+$buscar = strpos($bienvenida, $palabra);
+
+echo $buscar;
+
+//se pueden mezclar las funciones
+
+$bienvenida = "bienvenido al mundo de la programacion";
+
+$palabra = "programacion";
+
+$buscar = strpos($bienvenida, $palabra);
+
+$extraccion = substr($bienvenida, $buscar);
+
+echo $extraccion;
+
+//Replace - reemplazar una palabra o caracter dentro de un string
+
+$rfc = "91 75 1A EC C7";
+$replace = " ";
+$remplazar = ":";
+
+$resultado = str_replace($replace, $remplazar, $rfc);
+
+echo $resultado;
+
+//Agregar formato a un string
+
+$año = "1991";
+$mes = "7";
+$dia = "11";
+
+$formato = "%s-%s-%s";
+$formato = "%s/%s/%s";
+
+echo sprintf($formato, $dia, $mes, $año);
+
 
 // entero = 7;
 // float = 11,4;
@@ -93,7 +236,8 @@ echo "Hola ".$nombre." ".$apellido;
 ?>
 
 <?
-//Constantes
+////////////Constantes////////
+
 // (se puede usar de manera global)
 // const escuela = "Simon Bolivar";
 
@@ -101,36 +245,38 @@ echo "Hola ".$nombre." ".$apellido;
 // define("direccion","calle 13 de enero");
 
 // para imprimir esta constante usamos
-// echo direccion -> la especificacion de la constante
+// echo direccion la especificacion de la constante
+// si intentara redeclarar direccion, tendria un Error
+// direccion="av ricaurte"; no se puede
 
-//Conversiones//
+//Conversiones////////
 
-detectar los tipos de valores de una variable
-<?php
-$nombre = "raki";
-echo gettype($nombre);
-$edad = "33";
-echo gettype($nombre);
+// detectar los tipos de valores de una variable
 
-// cambiar los tipos de valores en una variable
+// $nombre = "raki";
+// echo gettype($nombre);
+// $edad = "33";
+// echo gettype($nombre);
+
+////cambiar los tipos de valores en una variable////////////////
 // a pesar de ser un entero y una cadena, php hace el cambio de tipo y realiza la peticion
 
-$numero = "18";
-$numero2 = 11;
+// $numero = "18";
+// $numero2 = 11;
 
-$suma= $numero + $numero2;
+// $suma= $numero + $numero2;
 
-echo $suma;
+// echo $suma;
 
-$numero = 20.5;
-$numero2 = 11;
+// $numero = 20.5;
+// $numero2 = 11;
 
-$suma= $numero + $numero2;
+// $suma= $numero + $numero2;
 
 // para definir que tipo de valor se desea recibir, intval significa (entero valido)
-echo intval($suma);
-echo strval($suma);
-echo gettype(intval($suma));
+// echo intval($suma);
+// echo strval($suma);
+// echo gettype(intval($suma));
 ?>
 
 //Concatenacion e interpolacion//
@@ -163,149 +309,6 @@ $palabra = "codigo";
 echo "hola {$palabra} facil";
 ?>
 
-//Formas de trabajar un String
-
-1era - comillas simples
-
-2da - comillas dobles
-
-3era - heredoc
-
-4ta - nowdoc
-
-//comillas dobles y comillas sencillas
-
-<?php
-$saludo = "hola";
-
-echo "$saludo Miguel Bienvenido";
-
-// con comillas simples 
-echo '$saludo Miguel Bienvenido';
-
-// con comillas simples no se reconoce la variable no se puede hacer la interpolacion, al tener solo una comilla se quita el tiempo que se toma el interprete de definir el string
-
-// para hacer enfasis de una frase no se puede simplemente agregar comillas dobles, reconoce las dos primeras comillas dobles y el segundo par de comillas dobles, fuera de eso, no reconoce las otras palabras como parte del string
-
-// echo ""eres una mala persona" dijo la otra persona";
-
-// para hacer enfasis de una frase dentro de una cadena se usa \, la barra de escape
-
-echo "\"eres una mala persona\" dijo la otra persona";
-
-// se pueden usar comillas dobles dentro de comillas simples sin problema
-
-echo '"eres una buena persona"';
-
-// para usar comillas simples dentro de comillas simples se debe usar la barra de escape \
-
-echo 'I\'dont';
-
-// usar comillas simples dentro de comillas dobles las comillas simples se reconocen como parte de la cadena
-
-echo "'Eres una gran persona'";
-
-//usar dentro de las comillas dobles el simbolo $
-
-echo "\20$";
-
-//dentro de comillas simples, no hay problema el uso de $ porque no reconoce el simbolo como variable
-
-echo '30$';
-
-//heredoc y nowdoc -> permite crear strings con muchos caracteres
-
-//Heredoc
-
-// <<<identificador+enter
-
-//permite que se incluyan variables
-
-//se pueden incluir comillas
-echo <<<frase
-No importa cual bando inicia una guerra, cuando esta comienza, "ambos bandos son malos"
-frase;
-
-//Nowdoc
-
-// <<<'identificador'+enter
-
-//no incluye variables
-
-echo <<<'frase'
-Ella era como el sol, todo giraba alrededor de ella, incluso yo, todo resplandecia, todo brillaba por ella, y yo era feliz, por ella.
-frase;
-
-//ambas se pueden guardar en variables
-//$frase = <<<id+enter+string+id;
-
-// Funciones para los strings//
-
-//Extraer una parte de un string
-
-$apellido = substr("José Navas Gutierrez", 5);
-
-echo $apellido;
-
-//si solo deseo cierto numero de caracteres
-
-$apellido = substr("José Navas Gutierrez", 5, 6);
-
-echo $apellido;
-
-//se pueden usar numeros negativos en la longitud
-
-$apellido = substr("Gutierrezzz", 0, -2);
-
-echo $apellido;
-
-//buscar una palabra dentro de un string
-
-//strpos(donde se va a buscar, cual palabra se va a buscar)
-
-//lo que devuelve strpos es la posicion de la palabra en el string
-
-$bienvenida = "bienvenido al mundo de la programacion";
-
-$palabra = "programacion";
-
-$buscar = strpos($bienvenida, $palabra);
-
-echo $buscar;
-
-//se pueden mezclar las funciones
-
-$bienvenida = "bienvenido al mundo de la programacion";
-
-$palabra = "programacion";
-
-$buscar = strpos($bienvenida, $palabra);
-
-$extraccion = substr($bienvenida, $buscar);
-
-echo $extraccion;
-
-//Replace -> reemplazar una palabra o caracter dentro de un string
-
-$rfc = "91 75 1A EC C7";
-$replace = " ";
-$remplazar = ":";
-
-$resultado = str_replace($replace, $remplazar, $rfc);
-
-echo $resultado;
-
-//Agregar formato a un string
-
-$año = "1991";
-$mes = "7";
-$dia = "11";
-
-$formato = "%s-%s-%s";
-$formato = "%s/%s/%s";
-
-echo sprintf($formato, $dia, $mes, $año);
-?>
 
 //Operadores
 
