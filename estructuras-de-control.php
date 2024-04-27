@@ -1,4 +1,5 @@
 <?php
+
 //Estructura de control
 //If-else, else if
 
@@ -16,11 +17,8 @@ if($promedio>=7 && $tieneFaltas=="no"){
 
 echo ($promedio >= 7 && $tieneFaltas == "no") ? "aprobaste la materia" : "no aprobaste burro";
 
-?>
 
 //Switch
-
-<?php
 
 $camisa = "verde";
 
@@ -38,11 +36,54 @@ switch($camisa){
         echo "camisa verde";
         break;
 }
+
+//ejemplo de switch
+/*
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="estructuras-de-control.php" method="post">
+    <input type="submit" name="btnValor" value="1">
+    <br>
+    <input type="submit" name="btnValor" value="2">
+    <br>
+    <input type="submit" name="btnValor" value="3">
+</body>
+</html>
+
+<?php
+
+if($_POST){
+    $boton = $_POST['btnValor'];
+
+    switch($boton){
+
+        case:1
+        echo "presionaste el boton 1";
+        break;
+
+        case:2
+        echo "presionaste el boton 2";
+        break;
+
+        case:3
+        echo "presionaste el boton 3";
+        break;
+    }
+}
+
 ?>
+ */
 
 //Match v8
 //parecido al switch
-<?php
+
 $camisa = "verde";
 echo match ($camisa) {
     "gris" => "camisa gris",
@@ -50,12 +91,10 @@ echo match ($camisa) {
     "roja" => "camisa roja",
     "verde" => "camisa verde"
 };
-?>
 
 //Estructuras repetitivas
-ciclo while
+//ciclo while
 
-<?php
 $zapato = 0;
 
 while($zapato<=100){
@@ -66,7 +105,7 @@ while($zapato<=100){
 //do while
 $zapato = 0;
 
-while($zapato<=100){
+while($zapato<=10){
     echo "zapato numero: ", $zapato;
     ++$zapato;
 }
@@ -76,11 +115,10 @@ echo $zapato;
 do{
     echo "zapato numero: ",$zapato;
     ++$zapato;
-}while($zapato<=100);
-?>
+}while($zapato<=10);
 
 //ciclo for
-<?php
+
 for($i = 0;$i <= 10; $i++){
     echo "valor de la variable: ",$i;
 }
@@ -92,4 +130,3 @@ $nombre="raki";
 foreach($array as $nombre){
     echo "mi nombre es: ",$nombre;
 }
-?>

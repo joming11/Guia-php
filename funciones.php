@@ -22,7 +22,7 @@ function dameEdad($año){
     $edad = 2023 - $año;
     echo "mi edad es: $edad";
 }
-//al parametro incial ($año) lo evaluamos con un valor -> obtenerEdad(1991)
+//al parametro incial ($año) lo evaluamos con un valor -> dameEdad(1991)
 //se puede llamar la funcion cuantas veces se necesite
 dameEdad(1991);
 
@@ -100,5 +100,36 @@ $suma = function ($numero1, $numero2) use ($msj) {
 };
 
 echo $suma(39, 61);
+
+/*
+
+ej:
+function imprimirNombre($nombre,$apellido){
+    echo "Hola ".$nombre. " ".$apellido."<br>";
+}
+
+inmprimir nombre("nombre","apellido");
+inmprimir nombre("nombre","apellido");
+
+se puede definir uno de los parametros imprimirNombre($nombre,$apellido="")
+asi, si el usuario envia el campo de apellido vacio, no marque error
+ */
+
+//funcion nativa rand, genera un numero aleatorio entre los numeros definidos
+
+$numeroAleatorio = rand(1,10);
+
+echo $numeroAleatorio;
+
+//funcion nativa para strings, convierte el string a mayuscula
+
+$nombre = "raquel manzanilla";
+$nombreMayuscula=strtoupper($nombre);
+echo $nombreMayuscula;
+
+//funcion date, para mostrar fechas
+
+$hoy= date("Y - M - D");
+echo $hoy;
 
 ?>
